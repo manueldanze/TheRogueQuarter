@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <File name="FILE_OUT" fileName="rogue-quarter.log" append="false">
+            <PatternLayout pattern="%d{yyyy.MM.dd hh.mm.ss} %t %-5p %c{2} - %m%n"/>
+        </File>
+        <Console name="CONSOLE_GAME_OUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%m%n" alwaysWriteExceptions="false"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="rogue-quarter-log" level="info" additivity="true">
+            <AppenderRef ref="CONSOLE_GAME_OUT"/>
+        </Logger>
+        <Root level="debug">
+            <AppenderRef ref="FILE_OUT"/>
+        </Root>
+    </Loggers>
+</Configuration>
